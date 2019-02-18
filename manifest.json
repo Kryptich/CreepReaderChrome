@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "CreepReader",
+  "version": "0.1",
+  "description": "A Chrome add-on to imitate human behavior and download + assemble full-length books from a specific textbook site.
+                  THIS IS A WHITE-HAT SECURITY TESTING PROJECT. The addon and test results were fully disclosed to the affected organization.",
+  "content_scripts": [
+    {
+      "matches": ["http://platform.> SITE REDACTED <.com/*",
+                "https://platform.> SITE REDACTED <.com/*"],
+      "js": ["jquery-3.3.1.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {"default_icon": "icon.png"},
+  "background": { "scripts": ["background.js"] },
+  "permissions": [
+    "activeTab",
+    "webNavigation",
+    "tabs",
+    "cookies",
+    "storage",
+    "https://platform.> SITE REDACTED <.com/*"
+  ]
+}
